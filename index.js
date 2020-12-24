@@ -32,16 +32,10 @@ overlay.addEventListener('click', (event) => {
   }
 });
 
-//edit profile after submit:
-function profileEdit() {  
-    profileTitle.textContent = inputName.value;
-    profileDescription.textContent = inputDescription.value;
-    popupVisibility();
-}
-
-
 //popup submit:
-popup.addEventListener('submit', event => {
+submitButton.addEventListener('click', (event) => {
   event.preventDefault();
-  profileEdit();
+  profileTitle.textContent = inputName.value;
+  profileDescription.textContent = inputDescription.value;
+  popupVisibility();
 });
