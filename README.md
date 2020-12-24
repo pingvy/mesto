@@ -14,4 +14,4 @@
 * Grid Layout
 * Адаптивная вёрстка
 
-[Ссылка на проект](https://www.figma.com/file/StZjf8HnoeLdiXS7dYrLAh/JavaScript.-Sprint-4)
+[Ссылка на проект] https://pingvy.github.io/mesto/index.html
