@@ -14,4 +14,4 @@
 * Grid Layout
 * Адаптивная вёрстка
 
-Ссылка на проект : 
+[Ссылка на проект](https://pingvy.github.io/mesto/index.html)
