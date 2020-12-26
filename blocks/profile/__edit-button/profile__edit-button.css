@@ -1,5 +1,5 @@
 .profile__edit-button {
-  background-image: url('../../../images/profile__edit.png');
+  background-image: url('../../../images/profile__edit-button.svg');
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
@@ -15,6 +15,13 @@
 
 .profile__edit-button:hover {
   opacity: 0.6;
+}
+
+@media screen and (max-width: 650px) {
+  .profile__edit-button {
+    top: 5px;
+    right: -40px;
+  }
 }
 
 @media screen and (max-width: 490px) {

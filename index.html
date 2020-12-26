@@ -11,15 +11,13 @@
     <header class='header'>
       <img src='./images/logo.svg' class='header__logo' alt='Логотип'>
     </header>
-
     <main class='main'>
       <section class='profile'>
         <img src='./images/profile__avatar.png' class='profile__avatar' alt='Аватар'>
         <div class='profile__container-text'>
           <h1 class='profile__title'>Жак-Ив Кусто</h1>
           <p class='profile__subtitle'>Исследователь океана</p>
-          <button class='profile__edit-button'>
-          </button>
+          <button class='profile__edit-button'></button>
         </div>
         <button class='profile__addition-button'>
         </button>
@@ -30,57 +28,57 @@
           <img src='./images/karachyevsk.jpg' class='elements__image' alt='Карачаевск'>
           <div class='elements__container'>
             <h3 class ='elements__title'>
-              Карачаевск
-            </h3>
-            <button class='elements__like'>
-            </button>
-          </div>
-        </li>
-        <li class='elements__item'>
-          <img src='./images/elbrus.jpg' class='elements__image' alt='Карачаевск'>
-          <div class='elements__container'>
-            <h3 class ='elements__title'>
-              Гора Эльбрус
-            </h3>
-            <button class='elements__like'>
-            </button>
-          </div>
-        </li>
-        <li class='elements__item'>
-          <img src='./images/dombay.jpg' class='elements__image' alt='Карачаевск'>
-          <div class='elements__container'>
-            <h3 class ='elements__title'>
-              Домбай
-            </h3>
-            <button class='elements__like'>
-            </button>
-          </div>
-        </li>
-        <li class='elements__item'>
-          <img src='./images/elbrus.jpg' class='elements__image' alt='Карачаевск'>
-          <div class='elements__container'>
-            <h3 class ='elements__title'>
-              Гора Эльбрус
-            </h3>
-            <button class='elements__like'>
-            </button>
-          </div>
-        </li>
-        <li class='elements__item'>
-          <img src='./images/dombay.jpg' class='elements__image' alt='Карачаевск'>
-          <div class='elements__container'>
-            <h3 class ='elements__title'>
-              Домбай
-            </h3>
-            <button class='elements__like'>
-            </button>
-          </div>
-        </li>
-        <li class='elements__item'>
-          <img src='./images/karachyevsk.jpg' class='elements__image' alt='Карачаевск'>
-          <div class='elements__container'>
-            <h3 class ='elements__title'>
               Карачаево-Черкессия
+            </h3>
+            <button class='elements__like'>
+            </button>
+          </div>
+        </li>
+        <li class='elements__item'>
+          <img src='./images/elbrus.jpg' class='elements__image' alt='Эльбрус'>
+          <div class='elements__container'>
+            <h3 class ='elements__title'>
+              Гора Эльбрус
+            </h3>
+            <button class='elements__like'>
+            </button>
+          </div>
+        </li>
+        <li class='elements__item'>
+          <img src='./images/dombay.jpg' class='elements__image' alt='Домбай'>
+          <div class='elements__container'>
+            <h3 class ='elements__title'>
+              Домбай
+            </h3>
+            <button class='elements__like'>
+            </button>
+          </div>
+        </li>
+        <li class='elements__item'>
+          <img src='./images/niagara.jpg' class='elements__image' alt='Ниагрский водопад'>
+          <div class='elements__container'>
+            <h3 class ='elements__title'>
+              Ниагрский водопад
+            </h3>
+            <button class='elements__like'>
+            </button>
+          </div>
+        </li>
+        <li class='elements__item'>
+          <img src='./images/grand-canyon.jpg' class='elements__image' alt='Гранд Каньон'>
+          <div class='elements__container'>
+            <h3 class ='elements__title'>
+              Гранд-Каньон
+            </h3>
+            <button class='elements__like'>
+            </button>
+          </div>
+        </li>
+        <li class='elements__item'>
+          <img src='./images/bled-lake.jpg' class='elements__image' alt='Бледское озеро'>
+          <div class='elements__container'>
+            <h3 class ='elements__title'>
+              Бледское озеро
             </h3>
             <button class='elements__like'>
             </button>
@@ -88,22 +86,18 @@
         </li>
       </ul>
     </main>
-
     <footer class='footer'>
       <p class='footer__text'>
         &copy; 2020 Mesto Russia
       </p>
     </footer>
-
-    <section class='overlay overlay_hidden'>
-      <form class='popup'>   
-        <h3 class='popup__title'>
-          Редактировать профиль
-        </h3>
-        <input id ='input-name' type ='text' class='popup__input popup__input-name' placeholder>
-        <input id ='input-description' type ='text' class='popup__input popup__input-description' placeholder>
-        <input type='submit' class='popup__submit' value='Сохранить'>
-        <button class='popup__exit-button'></button>
+    <section class='overlay'>
+      <form class='popup'>
+        <h3 class='form__title'>Редактировать профиль</h3>
+        <input type='text' class='popup__input popup__input-name'/>
+        <input type='text' class='popup__input popup__input-description'/>
+        <input type='submit' value='Сохранить' class='popup__submit-button'/> 
+        <span class='popup__close-button'></span>
       </form>
     </section>
   </div>
