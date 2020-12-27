@@ -10,15 +10,29 @@ let profileEditButton = containerText.querySelector('.profile__edit-button');
 //overlay & popup section
 let overlay = document.querySelector('.overlay');
 let popup = overlay.querySelector('.popup');
-let inputName = popup.querySelector('.popup__input-name');
-let inputDescription = popup.querySelector('.popup__input-description');
+let inputName = popup.querySelector('.popup__input_name');
+let inputDescription = popup.querySelector('.popup__input_description');
 let submitButton = popup.querySelector('.popup__submit-button');
 let closeButton = popup.querySelector('.popup__close-button');
 
 //popup appearance function
 function popupVisibility() {
   overlay.classList.toggle('overlay_active');
+  inputName.value = profileTitle.textContent;
+  inputDescription.value = profileSubtitle.textContent;
 }
+
+//profile edit function
+function profileAction() {
+  event.preventDefault();
+  profileTitle.textContent = inputName.value;
+  profileSubtitle.textContent = inputDescription.value;
+  popupVisibility();
+}
+
+//placeholders for inputs
+inputName.value = profileTitle.textContent;
+inputDescription.value = profileSubtitle.textContent;
 
 //popup appearance handlers
 profileEditButton.addEventListener('click', popupVisibility);
@@ -29,19 +43,7 @@ overlay.addEventListener('click', (event) => {
   }
 });
 
-//profile edit function
-function profileAction() {
-  profileTitle.textContent = inputName.value;
-  profileSubtitle.textContent = inputDescription.value;
-  popupVisibility();
-}
-
 //profile eddit handler
 popup.addEventListener('submit', (event) => {
-  event.preventDefault();
   profileAction()
 });
-
-//placeholders for inputs
-inputName.placeholder = profileTitle.textContent;
-inputDescription.placeholder = profileSubtitle.textContent;
