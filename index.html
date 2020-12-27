@@ -14,12 +14,14 @@
     <main class='main'>
       <section class='profile'>
         <img src='./images/profile__avatar.png' class='profile__avatar' alt='Аватар'>
-        <div class='profile__container-text'>
-          <h1 class='profile__title'>Жак-Ив Кусто</h1>
+        <div class='profile__container'>
+          <div class='profile__title-and-button_container'>
+            <h1 class='profile__title'>Жак-Ив Кусто</h1>
+            <button class='profile__edit-button'  type='button'></button>
+          </div>
           <p class='profile__subtitle'>Исследователь океана</p>
-          <button class='profile__edit-button'></button>
         </div>
-        <button class='profile__addition-button'>
+        <button class='profile__addition-button'  type='button'>
         </button>
       </section>
 
@@ -31,7 +33,7 @@
               <h3 class ='elements__title'>
                 Карачаево-Черкессия
               </h3>
-              <button class='elements__like'>
+              <button class='elements__like' type='button'>
               </button>
             </div>
           </li>
@@ -41,7 +43,7 @@
               <h3 class ='elements__title'>
                 Гора Эльбрус
               </h3>
-              <button class='elements__like'>
+              <button class='elements__like' type='button'>
               </button>
             </div>
           </li>
@@ -51,7 +53,7 @@
               <h3 class ='elements__title'>
                 Домбай
               </h3>
-              <button class='elements__like'>
+              <button class='elements__like' type='button'>
               </button>
             </div>
           </li>
@@ -61,7 +63,7 @@
               <h3 class ='elements__title'>
                 Ниагрский водопад
               </h3>
-              <button class='elements__like'>
+              <button class='elements__like' type='button'>
               </button>
             </div>
           </li>
@@ -71,7 +73,7 @@
               <h3 class ='elements__title'>
                 Гранд-Каньон
               </h3>
-              <button class='elements__like'>
+              <button class='elements__like' type='button'>
               </button>
             </div>
           </li>
@@ -81,7 +83,7 @@
               <h3 class ='elements__title'>
                 Бледское озеро
               </h3>
-              <button class='elements__like'>
+              <button class='elements__like' type='button'>
               </button>
             </div>
           </li>
@@ -94,16 +96,16 @@
       </p>
     </footer>
     <section class='overlay'>
-      <form class='popup' name='popup-form'>
+      <form class='popup' name='popup'>
         <h3 class='popup__title'>Редактировать профиль</h3>
         <input type='text' name='name' id='name' class='popup__input popup__input_name'/>
         <input type='text' name='description' id='description' class='popup__input popup__input_description'/>
-        <input type='submit' value='Сохранить' class='popup__submit-button'/> 
-        <span class='popup__close-button'></span>
+        <button class='popup__submit-button' type='submit'>Сохранить</button> 
+        <button class='popup__close-button' type ='reset'></button>
       </form>
     </section>
   </div>
-  <script src='index.js'>
+  <script src='./script/index.js'>
   </script>
 </body>
 </html>

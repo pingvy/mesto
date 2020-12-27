@@ -1,16 +1,13 @@
-.profile__container-text {
-  display: inline-block;
+.profile__container {
+  display: flex;
   flex-direction: column;
   margin-right: auto;
-  position: relative;
-  max-width: 430px;
  }
 
  @media screen and (max-width: 950px) {
-   .profile__container-text {
+   .profile__container {
      justify-content: center;
      align-items: space-between;
      margin: 0;
-     max-width: 500px;
    }
  }

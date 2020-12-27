@@ -2,10 +2,11 @@ let main = document.querySelector('.main');
 
 //profile section
 let profile = main.querySelector('.profile');
-let containerText = profile.querySelector('.profile__container-text');
-let profileTitle = containerText.querySelector('.profile__title');
-let profileSubtitle = containerText.querySelector('.profile__subtitle');
-let profileEditButton = containerText.querySelector('.profile__edit-button');
+let container = profile.querySelector('.profile__container');
+let containerTitleAndButton = container.querySelector('.profile__title-and-button_container');
+let profileTitle = containerTitleAndButton.querySelector('.profile__title');
+let profileEditButton = containerTitleAndButton.querySelector('.profile__edit-button');
+let profileSubtitle = container.querySelector('.profile__subtitle');
 
 //overlay & popup section
 let overlay = document.querySelector('.overlay');
@@ -36,7 +37,11 @@ inputDescription.value = profileSubtitle.textContent;
 
 //popup appearance handlers
 profileEditButton.addEventListener('click', popupVisibility);
-closeButton.addEventListener('click', popupVisibility);
+closeButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  popupVisibility();
+});
+
 overlay.addEventListener('click', (event) => {
   if (event.target === event.currentTarget) {
     popupVisibility();

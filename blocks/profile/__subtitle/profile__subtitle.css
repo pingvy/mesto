@@ -6,19 +6,19 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 430px;
 }
 
 @media screen and (max-width: 950px) {
   .profile__subtitle {
     text-align: center;
     margin: 0 0 32px 0;
-    max-width: 750px;
   }
 }
 
 @media screen and (max-width: 490px) {
   .profile__subtitle {
-    max-width: 252px;
+    max-width: 250px;
     font-size: 14px;
     line-height: 17px;
   }
