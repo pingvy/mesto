@@ -7,6 +7,7 @@ let containerTitleAndButton = container.querySelector('.profile__title-and-butto
 let profileTitle = containerTitleAndButton.querySelector('.profile__title');
 let profileEditButton = containerTitleAndButton.querySelector('.profile__edit-button');
 let profileSubtitle = container.querySelector('.profile__subtitle');
+<<<<<<< HEAD
 let addPhotoButton = profile.querySelector('.profile__addition-button');
 
 //overlay & popup edit profile section
@@ -124,11 +125,32 @@ function popupEditProfileVisibility() {
   overlayEditProfile.classList.toggle('overlay_active');
   inputPersonName.value = profileTitle.textContent;
   inputProfileDescription.value = profileSubtitle.textContent;
+=======
+
+//overlay & popup section
+let overlay = document.querySelector('.overlay');
+let popup = overlay.querySelector('.popup');
+let inputName = popup.querySelector('.popup__input_name');
+let inputDescription = popup.querySelector('.popup__input_description');
+let submitButton = popup.querySelector('.popup__submit-button');
+let closeButton = popup.querySelector('.popup__close-button');
+
+//popup appearance function
+function popupOpen() {
+  overlay.classList.add('overlay_active');
+  inputName.value = profileTitle.textContent;
+  inputDescription.value = profileSubtitle.textContent;
+}
+
+function popupClose() {
+  overlay.classList.remove('overlay_active');
+>>>>>>> fea8e7ef990185ca1dc1f7a04b18faa5a5b06075
 }
 
 //profile edit function
 function profileAction() {
   event.preventDefault();
+<<<<<<< HEAD
   profileTitle.textContent = inputPersonName.value;
   profileSubtitle.textContent = inputProfileDescription.value;
   popupEditProfileVisibility();
@@ -144,10 +166,28 @@ closeEditProfileButton.addEventListener('click', (event) => {
 overlayEditProfile.addEventListener('click', (event) => {
   if (event.target === event.currentTarget) {
     popupEditProfileVisibility();
+=======
+  profileTitle.textContent = inputName.value;
+  profileSubtitle.textContent = inputDescription.value;
+  popupClose();
+}
+
+//popup appearance handlers
+profileEditButton.addEventListener('click', popupOpen);
+closeButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  popupClose()
+});
+
+overlay.addEventListener('click', (event) => {
+  if (event.target === event.currentTarget) {
+    popupClose();
+>>>>>>> fea8e7ef990185ca1dc1f7a04b18faa5a5b06075
   }
 });
 
 //profile eddit handler
+<<<<<<< HEAD
 popupEditProfile.addEventListener('submit', (event) => {
   profileAction()
 });
@@ -199,4 +239,8 @@ overlayAddPhoto.addEventListener('click', (event) => {
 popupAddPhoto.addEventListener('submit', (event) => {
   AddPhoto(inputPhotoName.value, inputPhotoLink.value);
   popupAddPhotoVisibility();
+=======
+popup.addEventListener('submit', (event) => {
+  profileAction()
+>>>>>>> fea8e7ef990185ca1dc1f7a04b18faa5a5b06075
 });

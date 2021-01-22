@@ -1,10 +1,16 @@
 .elements__item {
   width: 282px;
+<<<<<<< HEAD
   height: 362px;
+=======
+>>>>>>> fea8e7ef990185ca1dc1f7a04b18faa5a5b06075
   list-style: none;
   display: flex;
   flex-direction: column;
   margin: 0;
+<<<<<<< HEAD
   z-index: 0;
   position: relative;
+=======
+>>>>>>> fea8e7ef990185ca1dc1f7a04b18faa5a5b06075
 }
