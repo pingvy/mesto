@@ -1,0 +1,14 @@
+.elements__like_active {
+  opacity: 1;
+  background-image: url('../../../../images/like-active.svg');
+  animation: like 0.2s linear;
+}
+
+@keyframes like {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

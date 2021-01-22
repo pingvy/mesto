@@ -1,0 +1,20 @@
+.profile__addition-button {
+  width: 150px;
+  height: 50px;
+  border: 2px solid #ffffff;
+  background-color: transparent;
+  background-image: url('../../../images/plus.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.profile__addition-button:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 950px) {
+  .profile__addition-button {
+    width: 282px;
+  }
+}

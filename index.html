@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+  <meta charset='UTF-8'> 
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel = 'stylesheet' href='./pages/index.css'>
+  <title>Mesto</title>
+</head>
+<body class='body'>
+  <div class='page'>
+    <header class='header'>
+      <img src='./images/logo.svg' class='header__logo' alt='Логотип'>
+    </header>
+    <main class='main'>
+      <section class='profile'>
+        <img src='./images/profile__avatar.png' class='profile__avatar' alt='Аватар'>
+        <div class='profile__container'>
+          <div class='profile__title-and-button-container'>
+            <h1 class='profile__title'>Жак-Ив Кусто</h1>
+            <button class='profile__edit-button' type='button'></button>
+          </div>
+          <p class='profile__subtitle'>Исследователь океана</p>
+        </div>
+        <button class='profile__addition-button'  type='button'>
+        </button>
+      </section>
+
+      <section class='elements'>
+        <ul class='elements__items'>
+          <template id = 'elements-template'>
+            <li class='elements__item'>
+              <button class='elements__delete' type='button'>
+              </button>
+              <img src='' class='elements__image' alt='Image'>
+              <div class='elements__container'>
+                <h3 class ='elements__title'>
+                </h3>
+                <button class='elements__like' type='button'>
+                </button>
+              </div>
+            </li>
+          </template>
+        </ul>
+    </section>
+    </main>
+    <footer class='footer'>
+      <p class='footer__text'>
+        &copy; 2020 Mesto Russia
+      </p>
+    </footer>
+    <section class='overlay overlay_edit-profile'>
+      <form class='popup popup_edit-profile' name='popup_edit-profile'>
+        <h3 class='popup__title'>Редактировать профиль</h3>
+        <input type='text' name='person-name' id='person-name' class='popup__input'/>
+        <input type='text' name='profile-description' id='profile-description' class='popup__input'/>
+        <button class='popup__submit-button' type='submit'>Сохранить</button> 
+        <button class='popup__close-button' type ='reset'></button>
+      </form>
+    </section>
+    <section class='overlay overlay_add-photo'>
+      <form class='popup popup_add-photo' name='popup_add-photo'>
+        <h3 class='popup__title'>Новое фото</h3>
+        <input type='text' name='photo-name' id='photo-name' class='popup__input' placeholder='Название'/>
+        <input type='text' name='photo-link' id='photo-link' class='popup__input' placeholder='Ссылка на изображение'/>
+        <button class='popup__submit-button' type='submit'>Сохранить</button> 
+        <button class='popup__close-button' type ='reset'></button>
+      </form>
+    </section>
+    <section class= 'overlay overlay_show-image'>
+      <div class='image-popup'>
+        <button class='popup__close-button' type ='reset'></button>
+        <img class='image-popup__image' src =''>
+        <h3 class='image-popup__title'>
+          
+        </h3>
+      </div>
+    </section>
+  </div>
+  <script src='./script/index.js'>
+  </script>
+</body>
+</html>

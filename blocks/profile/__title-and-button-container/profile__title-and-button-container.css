@@ -1,0 +1,10 @@
+.profile__title-and-button-container {
+  display: flex;
+  margin: 0 0 16px 0;
+}
+
+@media screen and (max-width: 425px) {
+  .profile__title-and-button-container {
+    margin: 0 0 14px 0;
+  }
+}
