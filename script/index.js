@@ -7,7 +7,6 @@ let containerTitleAndButton = container.querySelector('.profile__title-and-butto
 let profileTitle = containerTitleAndButton.querySelector('.profile__title');
 let profileEditButton = containerTitleAndButton.querySelector('.profile__edit-button');
 let profileSubtitle = container.querySelector('.profile__subtitle');
-<<<<<<< HEAD
 let addPhotoButton = profile.querySelector('.profile__addition-button');
 
 //overlay & popup edit profile section
@@ -76,7 +75,6 @@ overlayShowPhoto.addEventListener('click', (event) => {
   if (event.target === event.currentTarget) {
     event.preventDefault();
     imageVisibility();
-    debugger
   }
 });
 
@@ -118,14 +116,12 @@ initialCards.forEach(function(item) {
 });
 
 
-
-
 //popup appearance function
 function popupEditProfileVisibility() {
   overlayEditProfile.classList.toggle('overlay_active');
   inputPersonName.value = profileTitle.textContent;
   inputProfileDescription.value = profileSubtitle.textContent;
-=======
+}
 
 //overlay & popup section
 let overlay = document.querySelector('.overlay');
@@ -144,13 +140,11 @@ function popupOpen() {
 
 function popupClose() {
   overlay.classList.remove('overlay_active');
->>>>>>> fea8e7ef990185ca1dc1f7a04b18faa5a5b06075
 }
 
 //profile edit function
 function profileAction() {
   event.preventDefault();
-<<<<<<< HEAD
   profileTitle.textContent = inputPersonName.value;
   profileSubtitle.textContent = inputProfileDescription.value;
   popupEditProfileVisibility();
@@ -166,11 +160,11 @@ closeEditProfileButton.addEventListener('click', (event) => {
 overlayEditProfile.addEventListener('click', (event) => {
   if (event.target === event.currentTarget) {
     popupEditProfileVisibility();
-=======
   profileTitle.textContent = inputName.value;
   profileSubtitle.textContent = inputDescription.value;
   popupClose();
-}
+  }
+});
 
 //popup appearance handlers
 profileEditButton.addEventListener('click', popupOpen);
@@ -182,17 +176,13 @@ closeButton.addEventListener('click', (event) => {
 overlay.addEventListener('click', (event) => {
   if (event.target === event.currentTarget) {
     popupClose();
->>>>>>> fea8e7ef990185ca1dc1f7a04b18faa5a5b06075
   }
 });
 
 //profile eddit handler
-<<<<<<< HEAD
 popupEditProfile.addEventListener('submit', (event) => {
   profileAction()
 });
-
-
 
 function popupAddPhotoVisibility() {
   overlayAddPhoto.classList.toggle('overlay_active');
@@ -239,8 +229,8 @@ overlayAddPhoto.addEventListener('click', (event) => {
 popupAddPhoto.addEventListener('submit', (event) => {
   AddPhoto(inputPhotoName.value, inputPhotoLink.value);
   popupAddPhotoVisibility();
-=======
-popup.addEventListener('submit', (event) => {
-  profileAction()
->>>>>>> fea8e7ef990185ca1dc1f7a04b18faa5a5b06075
+});
+
+  popup.addEventListener('submit', (event) => {
+  profileAction();
 });

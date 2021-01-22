@@ -1,14 +1,10 @@
 .overlay {
   position: fixed;
-<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.2s, opacity 0.2s;
-=======
-  display: none;
->>>>>>> fea8e7ef990185ca1dc1f7a04b18faa5a5b06075
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
