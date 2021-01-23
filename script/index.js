@@ -1,27 +1,25 @@
-let main = document.querySelector('.main');
+const main = document.querySelector('.main');
 
-//profile section
-let profile = main.querySelector('.profile');
-let container = profile.querySelector('.profile__container');
-let containerTitleAndButton = container.querySelector('.profile__title-and-button-container');
-let profileTitle = containerTitleAndButton.querySelector('.profile__title');
-let profileEditButton = containerTitleAndButton.querySelector('.profile__edit-button');
-let profileSubtitle = container.querySelector('.profile__subtitle');
-let addPhotoButton = profile.querySelector('.profile__addition-button');
+const profile = main.querySelector('.profile');
+const container = profile.querySelector('.profile__container');
+const containerTitleAndButton = container.querySelector('.profile__title-and-button-container');
+const profileTitle = containerTitleAndButton.querySelector('.profile__title');
+const profileEditButton = containerTitleAndButton.querySelector('.profile__edit-button');
+const profileSubtitle = container.querySelector('.profile__subtitle');
+const addImageButton = profile.querySelector('.profile__addition-button');
 
 //overlay & popup edit profile section
-let overlayEditProfile = document.querySelector('.overlay_edit-profile');
-let popupEditProfile = overlayEditProfile.querySelector('.popup_edit-profile');
-let inputPersonName = document.querySelector('#person-name');
-let inputProfileDescription = document.querySelector ('#profile-description');
-let closeEditProfileButton = popupEditProfile.querySelector('.popup__close-button');
+const overlayEditProfile = document.querySelector('.overlay_edit-profile');
+const popupEditProfile = overlayEditProfile.querySelector('.popup_edit-profile');
+const inputPersonName = document.querySelector('#person-name');
+const inputProfileDescription = document.querySelector ('#profile-description');
+const closeEditProfileButton = popupEditProfile.querySelector('.popup__close-button');
 
-//overlay & popup add photo section
-let overlayAddPhoto = document.querySelector('.overlay_add-photo');
-let popupAddPhoto = overlayAddPhoto.querySelector('.popup_add-photo');
-let inputPhotoName = document.querySelector('#photo-name');
-let inputPhotoLink = document.querySelector ('#photo-link');
-let closeAddPhotoButton = popupAddPhoto.querySelector('.popup__close-button');
+let overlayAddImage = document.querySelector('.overlay_add-image');
+let popupAddImage = overlayAddImage.querySelector('.popup_add-image');
+let inputImageName = document.querySelector('#image-name');
+let inputImageLink = document.querySelector ('#image-link');
+let closeAddImageButton = popupAddImage.querySelector('.popup__close-button');
 
 //elements section
 const elements = document.querySelector('.elements');
@@ -33,12 +31,14 @@ let elementLink = elementsTemplate.querySelector('.elements__image');
 let elementTitle = elementsTemplate.querySelector('.elements__title');
 
 //image-show section
-const overlayShowPhoto = document.querySelector('.overlay_show-image');
-const imagePopup = overlayShowPhoto.querySelector('.image-popup');
+const overlayShowImage = document.querySelector('.overlay_show-image');
+const imagePopup = overlayShowImage.querySelector('.image-popup');
 const closeImageButton = imagePopup.querySelector('.popup__close-button');
 const itemImagePopup = imagePopup.querySelector('.image-popup__image');
 const titleImagePopup = imagePopup.querySelector('.image-popup__title');
 
+
+//initial images array
 const initialCards = [
   {
     name: 'Данься',
@@ -66,171 +66,101 @@ const initialCards = [
   }
 ]; 
 
-//image appearance 
-function imageVisibility() {
-  overlayShowPhoto.classList.toggle('overlay_active');
-}
-
-overlayShowPhoto.addEventListener('click', (event) => {
-  if (event.target === event.currentTarget) {
-    event.preventDefault();
-    imageVisibility();
+//popups visibility function
+function popupVisibility(overlayName) {
+  overlayName.classList.toggle('overlay_active');
+  if (overlayName == overlayEditProfile) {
+    inputPersonName.value = profileTitle.textContent;
+    inputProfileDescription.value = profileSubtitle.textContent;
   }
-});
+}
 
-closeImageButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  imageVisibility();
-});
+//overlays closing function
+function overlayClose(overlayName) {
+  overlayName.addEventListener('click', (event) => {
+    if (event.target === event.currentTarget) {
+        popupVisibility(overlayName);
+    }
+  });
+}
 
-//initial cards
-initialCards.forEach(function(item) {
-  const elementCard = elementsTemplate.cloneNode(true);
-  const elementLink = elementCard.querySelector('.elements__image');
-  elementLink.src = item.link;
-
-  elementLink.addEventListener('click', (event) => {
+//function for open and close popups
+function activityPopup(buttonName, overlayName) {
+  buttonName.addEventListener('click', (event) => {
     event.preventDefault();
-    imageVisibility();
-    itemImagePopup.src = item.link;
-    titleImagePopup.textContent = item.name;  
+    popupVisibility(overlayName);
   });
-
-  const elementTitle = elementCard.querySelector('.elements__title');
-  elementTitle.textContent = item.name;
-
-  const deleteButton = elementCard.querySelector('.elements__delete');
-  deleteButton.addEventListener('click', (event) => {
-    const closestElementsItem = deleteButton.closest('.elements__item');
-    closestElementsItem.remove();
-    initialCards.splice(closestElementsItem, 1);
-    console.log(initialCards);
-  });
-
-  const elementLike = elementCard.querySelector('.elements__like');
-  elementLike.addEventListener('click', (event) => {
-    elementLike.classList.toggle('elements__like_active');
-  });
-
-  elementsItems.append(elementCard);
-});
-
-
-//popup appearance function
-function popupEditProfileVisibility() {
-  overlayEditProfile.classList.toggle('overlay_active');
-  inputPersonName.value = profileTitle.textContent;
-  inputProfileDescription.value = profileSubtitle.textContent;
 }
 
-//overlay & popup section
-let overlay = document.querySelector('.overlay');
-let popup = overlay.querySelector('.popup');
-let inputName = popup.querySelector('.popup__input_name');
-let inputDescription = popup.querySelector('.popup__input_description');
-let submitButton = popup.querySelector('.popup__submit-button');
-let closeButton = popup.querySelector('.popup__close-button');
-
-//popup appearance function
-function popupOpen() {
-  overlay.classList.add('overlay_active');
-  inputName.value = profileTitle.textContent;
-  inputDescription.value = profileSubtitle.textContent;
-}
-
-function popupClose() {
-  overlay.classList.remove('overlay_active');
-}
-
-//profile edit function
+//edit profile information function
 function profileAction() {
   event.preventDefault();
   profileTitle.textContent = inputPersonName.value;
   profileSubtitle.textContent = inputProfileDescription.value;
-  popupEditProfileVisibility();
+  popupVisibility(overlayEditProfile);
 }
 
-//popup appearance handlers
-profileEditButton.addEventListener('click', popupEditProfileVisibility);
-closeEditProfileButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  popupEditProfileVisibility()
-});
-
-overlayEditProfile.addEventListener('click', (event) => {
-  if (event.target === event.currentTarget) {
-    popupEditProfileVisibility();
-  profileTitle.textContent = inputName.value;
-  profileSubtitle.textContent = inputDescription.value;
-  popupClose();
-  }
-});
-
-//popup appearance handlers
-profileEditButton.addEventListener('click', popupOpen);
-closeButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  popupClose()
-});
-
-overlay.addEventListener('click', (event) => {
-  if (event.target === event.currentTarget) {
-    popupClose();
-  }
-});
-
-//profile eddit handler
-popupEditProfile.addEventListener('submit', (event) => {
-  profileAction()
-});
-
-function popupAddPhotoVisibility() {
-  overlayAddPhoto.classList.toggle('overlay_active');
-}
-
-function AddPhoto(title, link) {
-  event.preventDefault();
-
+//add image function
+function imageActivity(item, link) {
   const elementCard = elementsTemplate.cloneNode(true);
   const elementLink = elementCard.querySelector('.elements__image');
   const elementTitle = elementCard.querySelector('.elements__title');
+  const deleteButton = elementCard.querySelector('.elements__delete');
+  const elementLike = elementCard.querySelector('.elements__like');
 
-  elementTitle.textContent = title;
   elementLink.src = link;
+  elementTitle.textContent = item;
+  elementsItems.prepend(elementCard);
 
   elementLink.addEventListener('click', (event) => {
     event.preventDefault();
-    imageVisibility();
-      itemImagePopup.src = link;
-      titleImagePopup.textContent = title;
+    popupVisibility(overlayShowImage);
+    itemImagePopup.src = link;
+    titleImagePopup.textContent = item;  
   });
-
-  const deleteButton = elementCard.querySelector('.elements__delete');
 
   deleteButton.addEventListener('click', (event) => {
     const closestElementsItem = deleteButton.closest('.elements__item');
     closestElementsItem.remove();
     initialCards.splice(closestElementsItem, 1);
-    console.log(initialCards);
   });
-  
-  elementsItems.prepend(elementCard);
-  initialCards.unshift({name: title, link: link});
-};
 
-addPhotoButton.addEventListener('click', popupAddPhotoVisibility);
-closeAddPhotoButton.addEventListener('click', popupAddPhotoVisibility);
-overlayAddPhoto.addEventListener('click', (event) => {
-  if (event.target === event.currentTarget) {
-    popupAddPhotoVisibility();
-  }
-});
+  elementLike.addEventListener('click', (event) => {
+    elementLike.classList.toggle('elements__like_active');
+  });
+}
 
-popupAddPhoto.addEventListener('submit', (event) => {
-  AddPhoto(inputPhotoName.value, inputPhotoLink.value);
-  popupAddPhotoVisibility();
-});
+//overlay close handlers
+overlayClose(overlayEditProfile);
+overlayClose(overlayShowImage);
+overlayClose(overlayAddImage);
 
-  popup.addEventListener('submit', (event) => {
+//buttons handlers
+activityPopup(profileEditButton, overlayEditProfile);
+activityPopup(addImageButton, overlayAddImage);
+activityPopup(closeEditProfileButton, overlayEditProfile);
+activityPopup(closeImageButton, overlayShowImage);
+activityPopup(closeAddImageButton, overlayAddImage);
+
+//profile eddit handler
+popupEditProfile.addEventListener('submit', (event) => {
   profileAction();
+});
+
+//initial image handler
+initialCards.forEach(function(item) {
+  imageActivity(item.name, item.link);
+});
+
+//new image handler
+function AddImage(title, link) {
+  event.preventDefault();
+  imageActivity(title, link);
+  initialCards.unshift({name: title, link: link});
+}
+
+//popup submit handler
+popupAddImage.addEventListener('submit', (event) => {
+  AddImage(inputImageName.value, inputImageLink.value);
+  popupVisibility(overlayAddImage);
 });
