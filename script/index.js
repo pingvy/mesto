@@ -63,10 +63,14 @@ const initialCards = [
 
 //popups visibility function
 function popupVisibility(overlayName) {
+  event.preventDefault();
   overlayName.classList.toggle('overlay_active');
   if (overlayName == overlayEditProfile) {
     inputPersonName.value = profileTitle.textContent;
     inputProfileDescription.value = profileSubtitle.textContent;
+  } else {
+    inputImageName.value = inputImageName.placeholder;
+    inputImageLink.value = inputImageLink.placeholder
   }
 }
 
