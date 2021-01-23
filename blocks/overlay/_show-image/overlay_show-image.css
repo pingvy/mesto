@@ -1,4 +1,3 @@
-.overlay-show-image {
-  flex-direction: column;
+.overlay_show-image {
   background-color: rgba(0, 0, 0, 0.9);
 }

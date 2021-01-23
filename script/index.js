@@ -28,7 +28,7 @@ const elementsItems = elements.querySelector('.elements__items');
 //image-show section
 const overlayShowImage = document.querySelector('.overlay_show-image');
 const imagePopup = overlayShowImage.querySelector('.image-popup');
-const closeImageButton = imagePopup.querySelector('.popup__close-button');
+const closeImageButton = imagePopup.querySelector('.image-popup__close-button');
 const itemImagePopup = imagePopup.querySelector('.image-popup__image');
 const titleImagePopup = imagePopup.querySelector('.image-popup__title');
 
