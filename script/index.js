@@ -15,20 +15,15 @@ const inputPersonName = document.querySelector('#person-name');
 const inputProfileDescription = document.querySelector ('#profile-description');
 const closeEditProfileButton = popupEditProfile.querySelector('.popup__close-button');
 
-let overlayAddImage = document.querySelector('.overlay_add-image');
-let popupAddImage = overlayAddImage.querySelector('.popup_add-image');
-let inputImageName = document.querySelector('#image-name');
-let inputImageLink = document.querySelector ('#image-link');
-let closeAddImageButton = popupAddImage.querySelector('.popup__close-button');
+const overlayAddImage = document.querySelector('.overlay_add-image');
+const popupAddImage = overlayAddImage.querySelector('.popup_add-image');
+const inputImageName = document.querySelector('#image-name');
+const inputImageLink = document.querySelector ('#image-link');
+const closeAddImageButton = popupAddImage.querySelector('.popup__close-button');
 
 //elements section
 const elements = document.querySelector('.elements');
 const elementsItems = elements.querySelector('.elements__items');
-
-//template section 
-const elementsTemplate = document.querySelector('#elements-template').content;
-let elementLink = elementsTemplate.querySelector('.elements__image');
-let elementTitle = elementsTemplate.querySelector('.elements__title');
 
 //image-show section
 const overlayShowImage = document.querySelector('.overlay_show-image');
@@ -102,6 +97,7 @@ function profileAction() {
 
 //add image function
 function imageActivity(item, link) {
+  const elementsTemplate = document.querySelector('#elements-template').content;
   const elementCard = elementsTemplate.cloneNode(true);
   const elementLink = elementCard.querySelector('.elements__image');
   const elementTitle = elementCard.querySelector('.elements__title');
