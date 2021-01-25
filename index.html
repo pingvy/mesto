@@ -47,13 +47,13 @@
         &copy; 2020 Mesto Russia
       </p>
     </footer>
-    <section class='overlay overlay_edit-profile'>
-      <form class='popup popup_edit-profile' name='popup_edit-profile'>
+    <section class='overlay' id='overlay-edit-profile'>
+      <form class='popup popup_type_form' name='popup_edit-profile'>
         <h3 class='popup__title'>
           Редактировать профиль
         </h3>
-        <input type='text' name='person-name' id='person-name' class='popup__input'/>
-        <input type='text' name='profile-description' id='profile-description' class='popup__input'/>
+        <input type='text' name='person-name' id='person-name' class='popup__input' placeholder='Как вас зовут?' required/>
+        <input type='text' name='profile-description' id='profile-description' class='popup__input' placeholder='Чем вы занимаетесь?' required/>
         <button class='popup__submit-button' type='submit'>
           Сохранить
         </button> 
@@ -61,11 +61,11 @@
         </button>
       </form>
     </section>
-    <section class='overlay overlay_add-image'>
-      <form class='popup popup_add-image' name='popup_add-image'>
+    <section class='overlay' id='overlay-add-image'>
+      <form class='popup popup_type_form' name='popup_add-image'>
         <h3 class='popup__title'>Новое фото</h3>
-        <input type='text' name='image-name' id='image-name' class='popup__input' placeholder='Название'/>
-        <input type='text' name='image-link' id='image-link' class='popup__input' placeholder='Ссылка на изображение'/>
+        <input type='text' name='image-name' id='image-name' class='popup__input' placeholder='Название' required/>
+        <input type='url' name='image-link' id='image-link' class='popup__input' placeholder='Ссылка на изображение' required/>
         <button class='popup__submit-button' type='submit'>
           Сохранить
         </button> 
@@ -73,12 +73,12 @@
         </button>
       </form>
     </section>
-    <section class= 'overlay overlay_show-image'>
-      <div class='image-popup'>
-        <img class='image-popup__image' src ='#' alt='Image'>
-        <h3 class='image-popup__title'>
+    <section class= 'overlay overlay_type_show-image' id='overlay-show-image'>
+      <div class='popup popup_type_show-image'>
+        <img class='popup__image' src ='#' alt='Image'>
+        <h3 class='popup__title_type_show-image'>
         </h3>
-        <button class='image-popup__close-button' type ='reset'>
+        <button class='popup__close-button' type ='reset'>
         </button>
       </div>
     </section>
