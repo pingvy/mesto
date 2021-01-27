@@ -63,23 +63,22 @@ const initialCards = [
 
 function popupOpen(overlayName) {
   overlayName.classList.add('overlay_active');
-  overlayClose(overlayName);
-}
-
-
-function popupClose(overlayName) {
-  overlayName.classList.remove('overlay_active');
-  overlayClose(overlayName);
-}
-
-//overlays closing function 
-function overlayClose(overlayName) { 
   overlayName.addEventListener('click', (event) => { 
     if (event.target === event.currentTarget) { 
         popupClose(overlayName); 
       }
     });
-  }; 
+}
+
+
+function popupClose(overlayName) {
+  overlayName.classList.remove('overlay_active');
+  overlayName.removeEventListener('click', (event) => { 
+    if (event.target === event.currentTarget) { 
+        popupClose(overlayName); 
+      }
+    });
+}
 
 //edit profile information function
 function profileAction() {
@@ -97,18 +96,18 @@ function createCard(item, link) {
   const elementLike = elementCard.querySelector('.elements__like');
 
   elementLink.src = link;
+  elementLink.alt = 'Image';
   elementTitle.textContent = item;
 
   elementLink.addEventListener('click', () => {
     popupOpen(overlayShowImage);
     itemImagePopup.src = link;
-    itemImagePopup.alt = 'Image';
     titleImagePopup.textContent = item;  
+    itemImagePopup.alt = 'Image';
   });
 
   deleteButton.addEventListener('click', () => {
-    const closestElementsItem = deleteButton.closest('.elements__item');
-    closestElementsItem.remove();
+    deleteButton.closest('.elements__item').remove();
   });
 
   elementLike.addEventListener('click', () => {
