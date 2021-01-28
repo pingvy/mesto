@@ -64,9 +64,7 @@ const initialCards = [
 function popupOpen(overlayName) {
   overlayName.classList.add('overlay_active');
   overlayName.addEventListener('click', (event) => { 
-    if (event.target === event.currentTarget) { 
-        popupClose(overlayName); 
-      }
+    overlayClose(overlayName);
     });
 }
 
@@ -74,10 +72,14 @@ function popupOpen(overlayName) {
 function popupClose(overlayName) {
   overlayName.classList.remove('overlay_active');
   overlayName.removeEventListener('click', (event) => { 
-    if (event.target === event.currentTarget) { 
-        popupClose(overlayName); 
-      }
+    overlayClose(overlayName);
     });
+}
+
+function overlayClose(overlayName) {
+  if (event.target === event.currentTarget) {
+    popupClose(overlayName)
+  }
 }
 
 //edit profile information function
